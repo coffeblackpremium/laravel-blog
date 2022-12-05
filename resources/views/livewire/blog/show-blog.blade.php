@@ -1,4 +1,4 @@
-<div class="my-19 box-content">
+<div class="my-19 box-content ">
    <header class="w-full h-96 mt-14 bg-gradient-to-r from-violet-500 to-fuchsia-500">
         <div class="">
             <h1 class="text-white flex items-center justify-center text-xl text-center mt-24 absolute"> 
@@ -8,8 +8,8 @@
    </header>
 
    <!-- Corpo do site !-->
-    <div class="max-w-lg mx-auto pt-4">
-        <div class="bg-slate-200 shadow-sm rounded-lg w-32 mx-1 my-3">
+    <div class="max-w-lg mx-auto pt-4 ">
+        <div class="bg-slate-200 shadow-sm rounded-lg w-32 mx-1 my-3 ">
             <h2 class="font-bold text-2xl">Posts 2022</h2>
         </div>
         <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">
