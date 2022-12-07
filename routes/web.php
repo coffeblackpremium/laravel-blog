@@ -3,9 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Blog\{
-    ShowPost,
     ShowBlog
 };
+use App\Http\Livewire\ShowPost;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +18,13 @@ use App\Http\Livewire\Blog\{
 |
 */
 
-Route::get('/blog', ShowBlog::class)->name('blog.index');
+Route::get('/blog', function() {
+    return view('index-blog');
+})->name('blog.index');
+
+Route::get('/blog/create-posts/', function() {
+    return view('create-post');
+});
 
 Route::get('/', function () {
     return view('welcome');

@@ -1,3 +1,3 @@
-<div>
-    {{-- Close your eyes. Count to one. That is how long forever feels. --}}
+<div class="">
+    <h1 class="text-black mx-24">Hello World</h1>
 </div>

@@ -10,4 +10,8 @@ class ShowBlog extends Component
     {
         return view('livewire.blog.show-blog');
     }
+    public function create()
+    {
+        return view('livewire.blog.create-posts');
+    }
 }
