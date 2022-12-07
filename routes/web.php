@@ -18,6 +18,7 @@ use App\Http\Livewire\ShowPost;
 |
 */
 
+//BLOG Rotas
 Route::get('/blog', function() {
     return view('index-blog');
 })->name('blog.index');
@@ -26,10 +27,10 @@ Route::get('/blog/create-posts/', function() {
     return view('create-post');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+
+
+// Jetstream Rotas
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
