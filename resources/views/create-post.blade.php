@@ -4,6 +4,6 @@
             {{ __('Posts') }}
         </h2>
     </x-slot>
-
-    @livewire('show-post')
+   
+@livewire('show-post')
 </x-app-layout>
