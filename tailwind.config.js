@@ -13,8 +13,12 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+            backgroundImage: {
+                'header-image': "url('assets/img/header-image.jpg')"
+            }
         },
     },
+
 
     plugins: [require('@tailwindcss/forms')],
 };

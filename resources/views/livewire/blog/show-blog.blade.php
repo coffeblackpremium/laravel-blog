@@ -1,11 +1,19 @@
-<div class="my-19 box-content ">
-   <header class="w-full h-96 mt-14 bg-gradient-to-r from-violet-500 to-fuchsia-500">
-        <div class="">
-            <h1 class="text-white flex items-center justify-center text-xl text-center mt-24 absolute"> 
+<div class="">
+   <div class="w-full bg-cover bg-center bg-header-image" style="height:32rem;">
+        <div clss="flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-90">
+            <div class="text-center py-44">
+                <h1 class="text-white text-2xl font-extrabold uppercase md:text-3xl">
+                    Bem-vindo ao meu
+                    <span class="underline text-blue-400">Blog</span>
+                </h1>
+                <button class="mt-4 px-4 py-2 mr-5 bg-black text-white text-sm uppercase font-medium rounded 
+                hover:bg-gray-500 focus:bg-gray-500"><i class="fa-brands fa-github"></i> Github</button>
+                <button class="mt-4 px-4 py-2 bg-black text-white text-sm uppercase font-medium rounded 
+                hover:bg-gray-500 focus:bg-gray-500"><i class="fa-brands fa-linkedin"></i> Linkedin</button>
+            </div>
         </div>
-            Hello World, this is site lorem </h1>
-           {{-- <img src="/storage/images/header.jpg" class="block w-full h-76"/> --}}
-   </header>
+    </div>
+   
 
    <!-- Corpo do site !-->
    <div class="bg-slate-200 mx-auto shadow-sm rounded-lg w-32 my-3 ">
