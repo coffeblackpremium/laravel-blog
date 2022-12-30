@@ -14,8 +14,8 @@ module.exports = {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
             backgroundImage: {
-                'header-image': "url('assets/img/header-image.jpg')"
-            }
+                'image-header': "url('assets/img/header-image.jpg')"
+            },
         },
     },
 
