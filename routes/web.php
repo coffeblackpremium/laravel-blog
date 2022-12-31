@@ -21,7 +21,7 @@ use App\Http\Livewire\User\UploadPhoto;
 */
 
 //BLOG Rotas
-Route::resource('/', BlogController::class);
+Route::resource('blog', BlogController::class);
 Route::get('user/upload', UploadPhoto::class);
 
 
