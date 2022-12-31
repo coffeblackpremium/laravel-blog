@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'profile_photo_path',
     ];
 
     /**
@@ -45,5 +46,10 @@ class User extends Authenticatable
     public function posts()
     {
         return $this->hasOne(Post::class);
+    }
+
+    public function getPhotoAttribute()
+    {
+        return $this->profile_photo_path;
     }
 }
