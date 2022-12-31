@@ -7,26 +7,28 @@ use App\Http\Livewire\Blog\{
     ShowBlog
 };
 use App\Http\Livewire\ShowPost;
+use App\Http\Livewire\User\UploadPhoto;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
+| Here is   where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
 */
 
 //BLOG Rotas
-Route::resource('blog', BlogController::class);
-
+Route::resource('/', BlogController::class);
+Route::get('user/upload', UploadPhoto::class);
 
 
 // Route::get('/blog/create-posts/', function() {
 //     return view('create-post');
 // });
+
 
 
 
