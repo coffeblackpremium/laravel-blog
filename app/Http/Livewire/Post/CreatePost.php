@@ -32,7 +32,7 @@ class CreatePost extends Component
     public function savePostImage()
     {
         $nameFile = Str::slug($this->title) . '.' . $this->image_path->getClientOriginalExtension();
-        $path = $this->image_path->store($nameFile, 'posts');
+        $path = $this->image_path->storeAs($this->title, $nameFile);
         return $path;
     }
     
