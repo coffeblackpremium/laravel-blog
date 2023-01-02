@@ -1,5 +1,5 @@
-<div class="">
-   <div class="w-full bg-cover bg-center bg-image-header filter bg-blend-multiply" style="height:32rem;">
+<div class="py-5">
+    <div class="w-full bg-cover bg-center bg-image-header filter bg-blend-multiply" style="height:32rem;">
         <div clss="flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-90">
             <div class="text-center py-44">
                 <h1 class="text-gray-200 text-2xl font-semibold uppercase md:text-3xl">
@@ -30,11 +30,11 @@
    @foreach($posts as $post)
    
    {{-- {{ dd(url("storage/{$post->user->photo}"))}} --}}
-    <div class="max-w-lg mx-auto pt-4 flex">
+    <div class="max-w-lg mx-auto pt-4 flex pb-5">
         <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-2xl mx-auto mb-5">
             <a href="#"></a>
             <div class="py-4 px-3">
-                <a href="#">
+                <a href="{{route('showPost', ['slug' => $post->slug, 'id' => $post->id])}}">
                     <img class="" src="{{url("storage/{$post->image_path}")}}" />
                     <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2 my-4">
                          {{$post->title}}</h5>
