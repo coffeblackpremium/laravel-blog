@@ -11,12 +11,12 @@
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <form method="POST" action="" >
-                        @csrf
+                    <form wire:submit.prevent='save' >
                         <div class="mb-6">
                             <label class="block">
                                 <span class="text-gray-700">Título</span>
-                                <input type="text" name="title" 
+                                <input type="text" name="title"
+                                wire:model.lazy='title' 
                                 class="block w-full @error('title') border-red-500 @enderror mt-1 rounded-md"
                                  placeholder=" " value="{{old('title')}}" />
                             </label>
@@ -25,6 +25,7 @@
                             <label class="block">
                                 <span class="text-gray-700">Slug</span>
                                 <input type="text" name="slug"
+                                    wire:model.lazy='slug'
                                     class="block w-full @error('slug') border-red-500 @enderror mt-1 rounded-md"
                                     placeholder="" value="{{old('slug')}}" />
                             </label>
@@ -32,10 +33,15 @@
                         <div class="mb-6">
                             <label class="block">
                                 <span class="text-gray-700">Description</span>
-                                <textarea id="markdown-editor" class="block w-full mt-1 rounded-md" name="description"
+                                <textarea wire:model='description' id="markdown-editor" class="block w-full mt-1 rounded-md" name="description"
                                     rows="3"></textarea>
                             </label>
                         </div>
+                        <div class="mb-6">
+                            <input type="file" wire:model='image_path' />
+                        </div>
+                        </div>
+
                         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> 
                             Enviar
                         </button>
@@ -44,6 +50,7 @@
             </div>
         </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
     <script>
         const easyMDE = new EasyMDE({

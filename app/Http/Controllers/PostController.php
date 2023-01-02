@@ -15,7 +15,7 @@ class PostController extends Controller
     {
         //
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -23,16 +23,16 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('pages.post.create');
+        return view('pages.post.create', []);
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
         //
     }
