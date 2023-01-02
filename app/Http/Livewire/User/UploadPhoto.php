@@ -32,7 +32,7 @@ class UploadPhoto extends Component
                 'profile_photo_path' => $path
             ]);
         };
-
+        
         return redirect()->route('blog.index');
 
     }

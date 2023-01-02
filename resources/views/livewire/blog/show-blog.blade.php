@@ -7,9 +7,17 @@
                     <span class="underline text-blue-500 font-semibold">Blog</span>
                 </h1>
                 <button class="mt-4 px-4 py-2 mr-5 bg-black text-white text-sm uppercase font-medium rounded 
-                hover:bg-gray-500 focus:bg-gray-500"><i class="fa-brands fa-github"></i> Github</button>
+                hover:bg-gray-500 focus:bg-gray-500">
+                    <a href="https://github.com/coffeblackpremium/">
+                        <i class="fa-brands fa-github"></i> Github
+                    </a>
+                </button>
                 <button class="mt-4 px-4 py-2 bg-black text-white text-sm uppercase font-medium rounded 
-                hover:bg-gray-500 focus:bg-gray-500"><i class="fa-brands fa-linkedin"></i> Linkedin</button>
+                hover:bg-gray-500 focus:bg-gray-500">
+                    <a href="https://www.linkedin.com/in/jo%C3%A3o-damaceno-martins-da-silva-27b3771b6/">
+                        <i class="fa-brands fa-linkedin"></i> Linkedin
+                    </a>
+                </button>
             </div>
         </div>
     </div>
@@ -40,10 +48,10 @@
                 <div class="pl-2 pb-2 mx-auto mt-4 flex items-center">
                     {{-- <img src="{{$post->user->profile_photo_path}}" class="rounded-full h-14 w-14 flex items-center justify-center bg-blue-500"/> --}}
                     @if($post->user->photo)
-                    {{-- {{dd($post->user->photo)}} --}}
+                    {{-- {{dd(url("storage/{$post->user->photo}"))}} --}}
                         <img class="rounded-full h-14 w-14 flex items-center justify-center bg-blue-500" src="{{ url("storage/{$post->user->photo}")}}" />
                     @else
-                    {{dd(url('assets/img/user-no-image/user-default.png'))}}
+                    {{-- {{dd(url('assets/img/user-no-image/user-default.png'))}} --}}
                         <img class="rounded-full h-14 w-14 flex items-center justify-center bg-blue-500" src="{{ url('assets/img/user-no-image/user-default.png') }}" />
                     @endif
                     <h2 class="pl-3 font-semibold text-md">{{$post->user->name}}</h2>

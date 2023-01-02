@@ -1,8 +1,6 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="text-black">
-            Blog novo!!
-        </h2>
+    <x-slot name="title">
+        Blog - Home
     </x-slot>
 
     <section>
