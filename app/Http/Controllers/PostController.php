@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -43,9 +44,13 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showPost($slug, $id)
     {
-        //
+        
+        $post = Post::where('slug', $slug)->find($id);
+
+        // $post = Post::paginate(10);
+        return view('pages.post.show', ['post' => $post]);
     }
 
     /**
