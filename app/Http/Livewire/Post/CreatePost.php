@@ -13,13 +13,15 @@ class CreatePost extends Component
     public $title;
     public $slug;
     public $description;
+    public $body_content;
     public $image_path;
 
     protected $rules = [
         'title' => 'min:1|max:220|required',
         'slug' => 'required',
-        'description' => 'required',
-        'image_path' => 'nullable|image|max:1024',
+        'description' => 'min:1|max:255|required',
+        'body_content' => 'required',
+        'image_path' => 'nullable|image|max:5024',
     ];
 
     public function render()
@@ -33,7 +35,12 @@ class CreatePost extends Component
         $path = $this->image_path->store($nameFile, 'posts');
         return $path;
     }
-
+    
+    /**
+     * Salva o Formulario do Usuario
+     *
+     * @return void
+     */
     public function save()
     {
         $this->validate();        
@@ -45,6 +52,7 @@ class CreatePost extends Component
             'title' => $this->title,
             'slug' => $this->slug,
             'description' => $this->description,
+            'body_content' => $this->body_content,
             'image_path' => $this->savePostImage(),
         ]);
         

@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('slug');
             $table->string('title');
-            $table->longText('description');
+            $table->string('description', 255);
+            $table->longText('body_content');
             $table->text('image_path')->nullable();
             $table->timestamps();
             $table->unsignedBigInteger('user_id');

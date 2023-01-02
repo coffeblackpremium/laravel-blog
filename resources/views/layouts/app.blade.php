@@ -9,6 +9,8 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+        <script src="https://cdn.tiny.cloud/1/sk6rqwdpvt6kkwknruhi8s6patw63716iw68xdud3vt6f9xh/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
         @livewireStyles
 
         <!-- Scripts -->
@@ -25,5 +27,6 @@
         </div>
         @include('livewire.footer')
         @livewireScripts
+        @stack('scripts')
     </body>
 </html>

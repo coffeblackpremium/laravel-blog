@@ -30,12 +30,18 @@
                         </div>
                         <div class="mb-6">
                             <label class="block">
-                                <span class="text-gray-700">Description</span>
-                                <textarea wire:model='description' id="markdown-editor" class="block w-full mt-1 rounded-md" name="description"
-                                    rows="3"></textarea>
+                                <span class="text-gray-700">Descrição</span>
+                                <textarea wire:model='description' class="block w-full mt-1 rounded-md"></textarea>
                             </label>
                         </div>
                         <div class="mb-6">
+                            <label class="block" wire:ignore>
+                                <span class="text-gray-700">Conteudo</span>
+                                <textarea wire:model='body_content' id="body_content" class="block w-full mt-1 rounded-md" name="body_content"
+                                    rows="3"></textarea>
+                            </label>
+                        </div>
+                        <div class="mb-6" wire:ignore>
                             <input type="file" wire:model.defer='image_path' />
                         </div>
                         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" wire:click='save' type="button"> 
@@ -46,5 +52,21 @@
             </div>
         </div>
     </div>
+
+    <script>
+
+        tinymce.init({
+            selector: '#body_content',
+            forced_root_block: false,
+            setup: function (editor) {
+                editor.on('init change', function () {
+                    editor.save();
+                });
+                editor.on('change', function (e) {
+                    @this.set('body_content', editor.getContent());
+                });
+            }
+        });
+    </script>
 
 </div>
