@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Blog\{
@@ -22,7 +23,11 @@ use App\Http\Livewire\User\UploadPhoto;
 
 //BLOG Rotas
 Route::resource('blog', BlogController::class);
+Route::resource('posts', PostController::class)->middleware('auth');
+
+
 Route::get('user/upload', UploadPhoto::class);
+
 
 
 // Route::get('/blog/create-posts/', function() {
