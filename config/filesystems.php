@@ -35,7 +35,13 @@ return [
             'root' => storage_path('app'),
             'throw' => false,
         ],
-
+        'posts' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public'),
+            'url' => env('APP_URL').'/storage/posts',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

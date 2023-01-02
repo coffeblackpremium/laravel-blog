@@ -2,27 +2,24 @@
 
 namespace App\Http\Livewire\Post;
 
-use App\Models\Post;
-use App\Models\User;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Str;
 
 class CreatePost extends Component
 {
     use WithFileUploads;
 
-    public $post;
     public $title;
     public $slug;
-    public $image_path;
     public $description;
-
+    public $image_path;
 
     protected $rules = [
         'title' => 'min:1|max:220|required',
-        'slug' => 'min:1|max:220required',
-        'image_path' => 'nullable|image|max:1000',
+        'slug' => 'required',
         'description' => 'required',
+        'image_path' => 'nullable|image|max:1024',
     ];
 
     public function render()
@@ -30,20 +27,28 @@ class CreatePost extends Component
         return view('livewire.post.create-post');
     }
 
-    public function mount() { }
+    public function savePostImage()
+    {
+        $nameFile = Str::slug($this->title) . '.' . $this->image_path->getClientOriginalExtension();
+        $path = $this->image_path->store($nameFile, 'posts');
+        return $path;
+    }
 
     public function save()
     {
-        $validation = $this->validate();
+        $this->validate();        
+        // $this->image_path->store('posts');
 
-        $this->image_path->store('posts');
+        // dd($this->savePostImage());
 
-        Post::create([
-            'user_id' => 1,
+        auth()->user()->posts()->create([
             'title' => $this->title,
             'slug' => $this->slug,
-            'image_path' => $this->image_path,
-            'description' => $this->description
+            'description' => $this->description,
+            'image_path' => $this->savePostImage(),
         ]);
+        
+        return redirect()->to('posts.create');
+
     }
 }

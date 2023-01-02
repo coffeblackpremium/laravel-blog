@@ -1,6 +1,4 @@
-<div>
-    <link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
-    
+<div>    
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
             {{ __('Criar Post')}}
@@ -11,13 +9,13 @@
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <form wire:submit.prevent='save' >
+                    <form wire:submit.prevent='save'>
                         <div class="mb-6">
                             <label class="block">
                                 <span class="text-gray-700">Título</span>
                                 <input type="text" name="title"
-                                wire:model.lazy='title' 
-                                class="block w-full @error('title') border-red-500 @enderror mt-1 rounded-md"
+                                wire:model.defer='title' 
+                                class="block w-full mt-1 rounded-md"
                                  placeholder=" " value="{{old('title')}}" />
                             </label>
                         </div>
@@ -25,8 +23,8 @@
                             <label class="block">
                                 <span class="text-gray-700">Slug</span>
                                 <input type="text" name="slug"
-                                    wire:model.lazy='slug'
-                                    class="block w-full @error('slug') border-red-500 @enderror mt-1 rounded-md"
+                                    wire:model.defer='slug'
+                                    class="block w-full  mt-1 rounded-md"
                                     placeholder="" value="{{old('slug')}}" />
                             </label>
                         </div>
@@ -38,11 +36,9 @@
                             </label>
                         </div>
                         <div class="mb-6">
-                            <input type="file" wire:model='image_path' />
+                            <input type="file" wire:model.defer='image_path' />
                         </div>
-                        </div>
-
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> 
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" wire:click='save' type="button"> 
                             Enviar
                         </button>
                     </form>
@@ -51,10 +47,4 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
-    <script>
-        const easyMDE = new EasyMDE({
-            showIcons: ['strikethrough', 'code', 'table', 'redo', 'heading', 'undo', 'heading-bigger', 'heading-smaller', 'heading-1', 'heading-2', 'heading-3', 'clean-block', 'horizontal-rule'],
-            element: document.getElementById('markdown-editor')});
-    </script>
 </div>

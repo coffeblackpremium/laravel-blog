@@ -35,7 +35,7 @@
             <a href="#"></a>
             <div class="py-4 px-3">
                 <a href="#">
-                    <img class="" src="{{$post->image_path}}" />
+                    <img class="" src="{{url("storage/{$post->image_path}")}}" />
                     <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2 my-4">
                          {{$post->title}}</h5>
                 </a>
