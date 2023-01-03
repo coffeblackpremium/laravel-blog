@@ -25,7 +25,7 @@
     
     <div class="bg-white mx-auto shadow-lg rounded-lg  max-w-4xl my-10 ">
         <h2 class="font-bold text-2xl mx-auto text-center py-10">{{$post->title}}</h2>
-        <div class="mx-auto text-center py-10">
+        <div class="mx-24 text-left py-10">
             @php
                 echo $post->body_content
             @endphp
