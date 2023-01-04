@@ -21,48 +21,41 @@
             </div>
         </div>
     </div>
-   
 
-   <!-- Corpo do site -->
-   <div class="bg-white mx-auto shadow-lg rounded-lg  max-w-4xl my-10 md:max-w-full">
-       <h2 class="font-light text-4xl mx-auto text-center py-10 font-roboto">Posts em 2022</h2>
 
-   @foreach($posts as $post)
-   
-   {{-- {{ dd(url("storage/{$post->user->photo}"))}} --}}
-    <div class="max-w-lg mx-auto pt-4 flex pb-5 md:max-w-7xl">
-        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-2xl mx-auto mb-5 md:max-w-5xl">
-            <a href="#"></a>
-            <div class="py-4 px-3 shadow-sm">
-                <a href="{{route('showPost', ['tema' => $post->tema, 'slug' => $post->slug])}}">
-                    <img class="" src="{{url("storage/{$post->image_path}")}}" />
-                    <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2 my-4">
-                         {{$post->title}}</h5>
-                </a>
-                <p class="font-normal text-gray-700 mb-3">
-                    {{$post->description}}</p>
-                <a class="text-white bg-blue-700 hover:bg-blue-800 
-                focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex">
-                    Leia mais
-                </a>
-                <div class="pl-2 pb-2 mx-auto mt-4 flex items-center">
-                    {{-- <img src="{{$post->user->profile_photo_path}}" class="rounded-full h-14 w-14 flex items-center justify-center bg-blue-500"/> --}}
-                    @if($post->user->photo)
-                    {{-- {{dd(url("storage/{$post->user->photo}"))}} --}}
-                        <img class="rounded-full h-14 w-14 flex items-center justify-center bg-blue-500" src="{{ url("storage/{$post->user->photo}")}}" />
-                    @else
-                    {{-- {{dd(url('assets/img/user-no-image/user-default.png'))}} --}}
-                        <img class="rounded-full h-14 w-14 flex items-center justify-center bg-blue-500" src="{{ url('assets/img/user-no-image/user-default.png') }}" />
-                    @endif
-                    <h2 class="pl-3 font-semibold text-md">{{$post->user->name}}</h2>
+    <!-- Corpo do site -->
+    <div class="bg-white mx-auto rounded-lg  max-w-4xl my-10 md:max-w-full">
+        <h2 class="font-light text-4xl mx-auto text-center py-10 font-roboto">Posts Mais recentes</h2>
+
+        <div class="flex flex-col gap-5">
+            @foreach($posts as $post)
+            <div
+                class="w-full lg:max-w-3xl max-w-sm mx-auto lg:flex transition ease-in-out delay-150 hover:-translate-y-1 hover:shadow-lg hover:scale-110 duration-300 ">
+                <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+                    style="background-image: url({{ url("storage/{$post->image_path}") }});" title="Woman holding a
+                    mug">
+                </div>
+                <div
+                    class="border-r border-b border-l self-center border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                    <div class="mb-8">
+                        <div class="text-gray-900 font-bold text-xl mb-2">{{$post->title}}</div>
+                        <p class="text-gray-700 text-base">{{$post->description}}</p>
+                    </div>
+                    <div class="flex items-center">
+                        <img class="w-10 h-10 rounded-full mr-4" src="{{url("storage/{$post->user->photo}")}}"
+                        alt="Avatar of
+                        Jonathan Reinink">
+                        <div class="text-sm">
+                            <p class="text-gray-900 leading-none">{{$post->user->name}}</p>
+                            <p class="text-gray-600">{{$post->created_at->format('d-m-Y / H:i:s')}}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
-    @endforeach
-</div>
     <div class="mx-auto">
-
         {{$posts->links('pagination::tailwind')}}
     </div>
 </div>
