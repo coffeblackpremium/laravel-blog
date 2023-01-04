@@ -14,7 +14,7 @@ class ShowBlog extends Component
     public function render()
     {
 
-        return view('livewire.blog.show-blog', ['posts' => Post::paginate(5)]);
+        return view('livewire.blog.show-blog', ['posts' => Post::latest()->paginate(5)]);
     }
 
     public function mount(Post $post)
