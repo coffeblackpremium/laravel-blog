@@ -44,11 +44,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function showPost($slug, $id)
+    public function showPost($tema, $slug)
     {
-        
-        $post = Post::where('slug', $slug)->find($id);
-
+        $post = Post::where('tema', $tema)->where('slug', $slug)->first();
         // $post = Post::paginate(10);
         return view('pages.post.show', ['post' => $post]);
     }

@@ -9,6 +9,9 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Varela&display=swap" rel="stylesheet">
         <script src="https://cdn.tiny.cloud/1/sk6rqwdpvt6kkwknruhi8s6patw63716iw68xdud3vt6f9xh/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
         @livewireStyles
@@ -17,7 +20,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans">
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen bg-white">
             
             @livewire('navbar')
             <!-- Page Content -->

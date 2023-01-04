@@ -24,17 +24,17 @@
    
 
    <!-- Corpo do site -->
-   <div class="bg-white mx-auto shadow-lg rounded-lg  max-w-4xl my-10 ">
-       <h2 class="font-bold text-2xl mx-auto text-center py-10">Posts em 2022</h2>
+   <div class="bg-white mx-auto shadow-lg rounded-lg  max-w-4xl my-10 md:max-w-full">
+       <h2 class="font-light text-4xl mx-auto text-center py-10 font-roboto">Posts em 2022</h2>
 
    @foreach($posts as $post)
    
    {{-- {{ dd(url("storage/{$post->user->photo}"))}} --}}
-    <div class="max-w-lg mx-auto pt-4 flex pb-5">
-        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-2xl mx-auto mb-5">
+    <div class="max-w-lg mx-auto pt-4 flex pb-5 md:max-w-7xl">
+        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-2xl mx-auto mb-5 md:max-w-5xl">
             <a href="#"></a>
-            <div class="py-4 px-3">
-                <a href="{{route('showPost', ['slug' => $post->slug, 'id' => $post->id])}}">
+            <div class="py-4 px-3 shadow-sm">
+                <a href="{{route('showPost', ['tema' => $post->tema, 'slug' => $post->slug])}}">
                     <img class="" src="{{url("storage/{$post->image_path}")}}" />
                     <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2 my-4">
                          {{$post->title}}</h5>

@@ -1,4 +1,6 @@
 @import "@fortawesome/fontawesome-free/css/all.css";
+@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

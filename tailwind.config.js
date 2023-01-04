@@ -12,6 +12,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                roboto: ['Roboto'],
             },
             backgroundImage: {
                 'image-header': "url('assets/img/header-image.jpg')"

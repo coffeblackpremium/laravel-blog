@@ -21,11 +21,11 @@
                         </div>
                         <div class="mb-6">
                             <label class="block">
-                                <span class="text-gray-700">Slug</span>
-                                <input type="text" name="slug"
-                                    wire:model.defer='slug'
+                                <span class="text-gray-700">tema</span>
+                                <input type="text" name="tema"
+                                    wire:model.defer='tema'
                                     class="block w-full  mt-1 rounded-md"
-                                    placeholder="" value="{{old('slug')}}" />
+                                    placeholder="" value="{{old('tema')}}" />
                             </label>
                         </div>
                         <div class="mb-6">
