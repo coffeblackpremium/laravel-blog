@@ -17,9 +17,10 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'slug' => $this->faker->slug(),
+            'tema' => 'tecnologia',
             'title' => $this->faker->name(),
             'description' => $this->faker->text(100),
+            'body_content' => $this->faker->text(500),
             'image_path' => $this->faker->imageUrl(640, 480),
             'user_id' => 1
         ];
