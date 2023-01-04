@@ -1,5 +1,5 @@
 <div>
-    <div class="w-full bg-cover filter bg-blend-multiply" style="height:32rem; background-image: linear-gradient(0deg, rgba(77, 93, 184, 0.61), rgba(0, 12, 184, 0.979)), url({{url("storage/{$post->image_path}")}});">
+    <div class="w-full bg-cover filter bg-blend-multiply" style="height:32rem; background-image: linear-gradient(0deg, rgba(77, 93, 184, 0.61), rgba(0, 12, 184, 0.979)), url({{url("$post->image")}});">
 
         <div clss="flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-90">
             <div class="mx-auto max-w-4xl flex flex-row justify-center md:justify-start align-middle gap-2 py-4 p">

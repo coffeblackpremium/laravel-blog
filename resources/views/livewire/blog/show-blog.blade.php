@@ -24,21 +24,23 @@
 
 
     <!-- Corpo do site -->
-    <div class="bg-white mx-auto rounded-lg  max-w-4xl my-10 md:max-w-full">
+    <div class="bg-white mx-auto rounded-lg max-w-5xl my-10 md:max-w-full">
         <h2 class="font-light text-4xl mx-auto text-center py-10 font-roboto">Posts Mais recentes</h2>
-
+        
         <div class="flex flex-col gap-5">
             @foreach($posts as $post)
+
             <div
-                class="w-full lg:max-w-3xl max-w-sm mx-auto lg:flex transition ease-in-out delay-150 hover:-translate-y-1 hover:shadow-lg hover:scale-110 duration-300 ">
+            
+                class="w-full lg:max-w-5xl max-w-sm mx-auto lg:flex transition ease-in-out delay-150 hover:-translate-y-1 hover:shadow-lg hover:scale-110 duration-300 ">
                 <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-                    style="background-image: url({{ url("storage/{$post->image_path}") }});" title="Woman holding a
+                    style="background-image: url({{$post->image}});" title="Woman holding a
                     mug">
                 </div>
                 <div
-                    class="border-r border-b border-l self-center border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                    class="border-r border-b border-l lg:flex-grow self-center border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
                     <div class="mb-8">
-                        <div class="text-gray-900 font-bold text-xl mb-2">{{$post->title}}</div>
+                        <div class="text-gray-900 font-bold text-xl mb-2"><a href="{{route('showPost', ['tema' => $post->tema, 'slug' => $post->slug])}}">{{$post->title}}</a></div>
                         <p class="text-gray-700 text-base">{{$post->description}}</p>
                     </div>
                     <div class="flex items-center">
@@ -47,7 +49,7 @@
                         Jonathan Reinink">
                         <div class="text-sm">
                             <p class="text-gray-900 leading-none">{{$post->user->name}}</p>
-                            <p class="text-gray-600">{{$post->created_at->format('d-m-Y / H:i:s')}}</p>
+                            <p class="text-gray-600">{{$post->created_at->format('d-m-Y')}}</p>
                         </div>
                     </div>
                 </div>
