@@ -20,15 +20,20 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans">
-        <div class="min-h-screen bg-white">
-            
-            @livewire('navbar')
+        <div class="">
+            <div class="mb-16">
+                @livewire('navbar')
+            </div>
             <!-- Page Content -->
             <main id='app'>
                 {{ $slot }}
             </main>
+            
         </div>
-        @include('livewire.footer')
+        @if(request()->route()->getName() === 'blog.index')
+            @include('livewire.footer')
+        @endif
+
         @livewireScripts
         @stack('scripts')
     </body>

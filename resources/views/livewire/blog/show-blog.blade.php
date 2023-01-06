@@ -1,4 +1,4 @@
-<div class="py-5">
+<div class="">
     <div class="w-full bg-cover bg-center bg-image-header filter bg-blend-multiply" style="height:32rem;">
         <div clss="flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-90">
             <div class="text-center py-44">
@@ -40,7 +40,11 @@
                 <div
                     class="border-r border-b border-l lg:flex-grow self-center border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
                     <div class="mb-8">
-                        <div class="text-gray-900 font-bold text-xl mb-2"><a href="{{route('showPost', ['tema' => $post->tema, 'slug' => $post->slug])}}">{{$post->title}}</a></div>
+                        <div class="text-gray-900 font-bold text-xl mb-2">
+                            <a href="{{ route('showPost', ['tema' => $post->tema, 'slug' => $post->slug])}}">
+                            {{$post->title}}
+                            </a>
+                        </div>
                         <p class="text-gray-700 text-base">{{$post->description}}</p>
                     </div>
                     <div class="flex items-center">
